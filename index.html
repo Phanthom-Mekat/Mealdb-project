@@ -4,150 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasty Hut</title>
-    <!-- poppins font cdn  -->
+    <!-- Poppins font CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- tailwind and daisy ui cdn  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Tailwind and DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- font awesome cdn -->
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         body {
             font-family: "Poppins", sans-serif;
-            font-style: normal;
-            }
-        html{
+        }
+        html {
           scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <header class="">
+    <header>
         <nav class="w-11/12 mx-auto mb-3">
-
             <div class="navbar bg-base-100">
                 <div class="flex-1">
-                  <a class="btn btn-ghost text-xl font-black">TastyHUT</a>
+                    <a class="btn btn-ghost text-xl font-black">TastyHUT</a>
                 </div>
                 <div class="flex-none">
-                  <button class="btn bg-[#FFC107] btn-ghost">
-                    Sign Up!
-                  </button>
+                    <button class="btn bg-[#FFC107] btn-ghost">Sign Up!</button>
                 </div>
-              </div>
-
+            </div>
         </nav>
         <section>
-
-            <div class="hero h-[90vh] "
-                    style="background-image: url(images/banner_1.png);">
-                    <div class="hero-overlay bg-opacity-60"></div>
-                    <div class="hero-content text-neutral-content text-center">
-                        <div class="w-8/12">
-                        <h1 class="mb-5 text-5xl font-bold">Taste Our Delicious <br> Best Foods</h1>
+            <div class="hero h-[80vh] md:h-[90vh]"
+                style="background-image: url(images/banner_1.png);">
+                <div class="hero-overlay bg-opacity-60"></div>
+                <div class="hero-content text-neutral-content text-center">
+                    <div class="w-10/12 md:w-8/12">
+                        <h1 class="mb-5 text-3xl md:text-5xl font-bold">Taste Our Delicious <br> Best Foods</h1>
                         <p class="mb-5">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou.
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
                         </p>
                         <div class="flex justify-center">
-                            <label class="input  input-bordered flex items-center gap-2 w-5/12">
+                            <label class="input input-bordered flex items-center gap-2 w-full md:w-5/12">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                                <input id="search" type="text" class=" " placeholder="Search" />
-                                <a href="#x">
-
-                                  <button onclick="searchAll()" class="btn bg-[#FFC107] border-none">Get Started</button>
-                                </a>
+                                <input id="search" type="text" placeholder="Search" />
+                                <button onclick="searchAll()" class="btn bg-[#FFC107] border-none">Get Started</button>
                             </label>
                         </div>
-                        </div>
                     </div>
-                    </div>
-
+                </div>
+            </div>
         </section>
     </header>
-   <main>
-    <section class="mt-20 mb-5">
-        <h1 class="text-2xl text-center font-bold">Your Favourite Food</h1>
-    </section>
-    <section id="x" class="mb-20">
-        <div id="menu" class="grid grid-cols-2 gap-10 w-11/12 mx-auto">
+    <main>
+        <section class="mt-10 md:mt-20 mb-5">
+            <h1 class="text-2xl text-center font-bold">Your Favourite Food</h1>
+        </section>
+        <section id="x" class="mb-20">
+            <div id="menu" class="grid grid-cols-1 md:grid-cols-2 gap-10 w-11/12 mx-auto">
 
-        </div>
-        <div  class="w-11/12 mx-auto text-center mt-5">
+            </div>
+            <div class="w-11/12 mx-auto text-center mt-5">
+                <button id="showAll" class="w-full md:w-4/12 btn bg-[#FFC107]">View All</button>
+            </div>
+        </section>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <div class="flex justify-between items-center">
+                    <h3 id="meal-title" class="text-xl font-bold">Meal Title</h3>
+                    <button class="text-2xl font-bold" onclick="document.getElementById('my_modal_5').close()">×</button>
+                </div>
+                <img id="meal-image" src="https://via.placeholder.com/400x200" alt="Meal Image" class="w-full h-auto mt-4 rounded-lg" />
+                <div class="mt-4">
+                    <p class="font-semibold">Category: <span id="meal-category" class="font-normal">Category</span></p>
+                    <p class="font-semibold">Area: <span id="meal-area" class="font-normal">Area</span></p>
+                    <p class="font-semibold">Instructions:</p>
+                    <p id="meal-instructions" class="font-normal">Instructions will go here...</p>
+                    <p class="font-semibold mt-2">Youtube:</p>
+                    <a id="meal-youtube" href="#" class="text-blue-600" target="_blank">Youtube Link</a>
+                </div>
+                <div class="modal-action">
+                    <button class="btn btn-success" onclick="document.getElementById('my_modal_5').close()">Close</button>
+                </div>
+            </div>
+        </dialog>
+    </main>
 
-            <button id="showAll"  class=" text-center w-4/12 btn bg-[#FFC107] ">View All</button>
-        </div>
-        
-    </section>
-    
-    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-      <div class="modal-box">
-          <div class="flex justify-between items-center">
-              <h3 id="meal-title" class="text-xl font-bold">Meal Title</h3>
-              <button class="text-2xl font-bold" onclick="document.getElementById('my_modal_5').close()">×</button>
-          </div>
-          <img id="meal-image" src="https://via.placeholder.com/400x200" alt="Meal Image" class="w-full h-auto mt-4 rounded-lg" />
-          <div class="mt-4">
-              <p class="font-semibold">Category: <span id="meal-category" class="font-normal">Category</span></p>
-              <p class="font-semibold">Area: <span id="meal-area" class="font-normal">Area</span></p>
-              <p class="font-semibold">Instructions:</p>
-              <p id="meal-instructions" class="font-normal">Instructions will go here...</p>
-              <p class="font-semibold mt-2">Youtube:</p>
-              <a id="meal-youtube" href="#" class="text-blue-600" target="_blank">Youtube Link</a>
-          </div>
-          <div class="modal-action">
-              <button class="btn btn-success" onclick="document.getElementById('my_modal_5').close()">Close</button>
-          </div>
-      </div>
-  </dialog>
-  
-        
-   </main>
-
-    <footer>
-
-        <footer class="footer bg-[#FFC107]/15 text-base-content p-10">
-            <nav>
-              <h6 class="footer-title">Services</h6>
-              <a class="link link-hover">Branding</a>
-              <a class="link link-hover">Design</a>
-              <a class="link link-hover">Marketing</a>
-              <a class="link link-hover">Advertisement</a>
-            </nav>
-            <nav>
-              <h6 class="footer-title">Company</h6>
-              <a class="link link-hover">About us</a>
-              <a class="link link-hover">Contact</a>
-              <a class="link link-hover">Jobs</a>
-              <a class="link link-hover">Press kit</a>
-            </nav>
-            <nav>
-              <h6 class="footer-title">Legal</h6>
-              <a class="link link-hover">Terms of use</a>
-              <a class="link link-hover">Privacy policy</a>
-              <a class="link link-hover">Cookie policy</a>
-            </nav>
-            <form>
-              <h6 class="footer-title">Newsletter</h6>
-              <fieldset class="form-control w-80">
+    <footer class="footer bg-[#FFC107]/15 text-base-content p-10">
+        <nav>
+            <h6 class="footer-title">Services</h6>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Company</h6>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Legal</h6>
+            <a class="link link-hover">Terms of use</a>
+            <a class="link link-hover">Privacy policy</a>
+            <a class="link link-hover">Cookie policy</a>
+        </nav>
+        <form>
+            <h6 class="footer-title">Newsletter</h6>
+            <fieldset class="form-control w-full md:w-80">
                 <label class="label">
-                  <span class="label-text">Enter your email address</span>
+                    <span class="label-text">Enter your email address</span>
                 </label>
                 <div class="join">
-                  <input
-                    type="text"
-                    placeholder="username@site.com"
-                    class="input input-bordered join-item" />
-                  <button class="btn btn-primary join-item">Subscribe</button>
+                    <input type="text" placeholder="username@site.com" class="input input-bordered join-item" />
+                    <button class="btn btn-primary join-item">Subscribe</button>
                 </div>
-              </fieldset>
-            </form>
-          </footer>
-
+            </fieldset>
+        </form>
     </footer>
-
 
     <script src="js/index.js"></script>
 </body>
