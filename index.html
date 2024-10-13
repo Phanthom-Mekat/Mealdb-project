@@ -78,27 +78,26 @@
     </section>
     
     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <div class="modal-box">
           <div class="flex justify-between items-center">
-            <h3 class="text-xl font-bold">Chicken Handi</h3>
-            <button class="text-2xl font-bold" onclick="document.getElementById('my_modal_5').close()">×</button>
+              <h3 id="meal-title" class="text-xl font-bold">Meal Title</h3>
+              <button class="text-2xl font-bold" onclick="document.getElementById('my_modal_5').close()">×</button>
           </div>
-      
-          <img src="https://via.placeholder.com/400x200" alt="Meal Image" class="w-full h-auto mt-4 rounded-lg" />
+          <img id="meal-image" src="https://via.placeholder.com/400x200" alt="Meal Image" class="w-full h-auto mt-4 rounded-lg" />
           <div class="mt-4">
-            <p class="font-semibold">Category: <span class="font-normal">Chicken</span></p>
-            <p class="font-semibold">Area: <span class="font-normal">Japanese</span></p>
-            <p class="font-semibold">Instructions:</p>
-            <p class="font-normal">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-            <p class="font-semibold mt-2">Youtube:</p>
-            <a href="https://www.youtube.com/watch?v=WnpbKoYhTEY" class="text-blue-600">https://www.youtube.com/watch?v=WnpbKoYhTEY</a>
+              <p class="font-semibold">Category: <span id="meal-category" class="font-normal">Category</span></p>
+              <p class="font-semibold">Area: <span id="meal-area" class="font-normal">Area</span></p>
+              <p class="font-semibold">Instructions:</p>
+              <p id="meal-instructions" class="font-normal">Instructions will go here...</p>
+              <p class="font-semibold mt-2">Youtube:</p>
+              <a id="meal-youtube" href="#" class="text-blue-600" target="_blank">Youtube Link</a>
           </div>
-      
           <div class="modal-action">
-            <button class="btn btn-error" onclick="document.getElementById('my_modal_5').close()">Close</button>
+              <button class="btn btn-success" onclick="document.getElementById('my_modal_5').close()">Close</button>
           </div>
-        </div>
-      </dialog>
+      </div>
+  </dialog>
+  
         
    </main>
 

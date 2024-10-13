@@ -24,7 +24,9 @@ const showAllData =  (data) => {
           <h2 class="card-title">${meal.strMeal}</h2>
           <p>${meal.strInstructions.slice(0, 200)}</p>
           <div class="card-actions justify-end">
-            <a onclick="my_modal_5.showModal()" class="border-b-2 cursor-pointer border-[#FFC107]">View Details</a>
+            <a onclick="openModal('${meal.strMeal.replace(/'/g, "\\'")}', '${meal.strMealThumb}', '${meal.strCategory}', '${meal.strArea}', \`${meal.strInstructions}\`, '${meal.strYoutube}')" class="border-b-2 cursor-pointer border-[#FFC107]">View Details</a>
+
+
           </div>
         </div>
         `;
@@ -56,7 +58,9 @@ const showAllData =  (data) => {
               <h2 class="card-title">${meal.strMeal}</h2>
               <p>${meal.strInstructions.slice(0, 200)}</p>
               <div class="card-actions justify-end">
-                <a onclick="my_modal_5.showModal()" class="border-b-2 border-[#FFC107]">View Details</a>
+                <a onclick="openModal('${meal.strMeal.replace(/'/g, "\\'")}', '${meal.strMealThumb}', '${meal.strCategory}', '${meal.strArea}', \`${meal.strInstructions}\`, '${meal.strYoutube}')" class="border-b-2 cursor-pointer border-[#FFC107]">View Details</a>
+
+
               </div>
             </div>
             `;
@@ -66,6 +70,34 @@ const showAllData =  (data) => {
 
     
 }
+
+const openModal = (mealName, mealImage, category, area, instructions, youtubeLink) => {
+  const modal = document.getElementById('my_modal_5');
+  const modalTitle = modal.querySelector('#meal-title');
+  const modalImage = modal.querySelector('#meal-image');
+  const modalCategory = modal.querySelector('#meal-category');
+  const modalArea = modal.querySelector('#meal-area');
+  const modalInstructions = modal.querySelector('#meal-instructions');
+  const modalYoutube = modal.querySelector('#meal-youtube');
+
+  modalTitle.textContent = mealName;
+  modalImage.src = mealImage;
+  modalCategory.textContent = category;
+  modalArea.textContent = area;
+  modalInstructions.textContent = instructions;
+  modalYoutube.href = youtubeLink;
+
+  modal.showModal();
+};
+
+
+
+
+
+
+
+
+
 
 
 
