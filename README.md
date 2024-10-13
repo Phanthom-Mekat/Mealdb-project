@@ -1,7 +1,11 @@
 # Tasty Hut
 
 Tasty Hut is a website that displays a list of meals from the MealDB API. Users can search for specific meals by name, and view details about each meal, including its ingredients, instructions, and YouTube video link.
+## Screenshots
 
+![screenshot of the homepage](images/frontend.png)
+
+![screenshot of a meal's details page](images/modal.png)
 ## Features
 
 * Search for meals by name
@@ -25,7 +29,4 @@ Tasty Hut is a website that displays a list of meals from the MealDB API. Users 
 
 [Live Link](https://phanthom-mekat.github.io/Mealdb-project/)
 
-## Screenshots
 
-![screenshot of the homepage](images/frontend.png)
-![screenshot of a meal's details page](images/modal.png)

@@ -22,7 +22,7 @@ const showAllData =  (data) => {
         </figure>
         <div class="card-body">
           <h2 class="card-title">${meal.strMeal}</h2>
-          <p>${meal.strInstructions.slice(0, 200)}</p>
+          <p>${meal.strInstructions.length > 200 ? meal.strInstructions.slice(0, 200) + "..." : meal.strInstructions + " " + "Food is an essential part of human life, providing nourishment, energy, and the vital nutrients needed for growth and survival. It brings people together, offering a "}</p>
           <div class="card-actions justify-end">
             <a onclick="openModal('${meal.strMeal.replace(/'/g, "\\'")}', '${meal.strMealThumb}', '${meal.strCategory}', '${meal.strArea}', \`${meal.strInstructions}\`, '${meal.strYoutube}')" class="border-b-2 cursor-pointer border-[#FFC107]">View Details</a>
 
@@ -56,7 +56,7 @@ const showAllData =  (data) => {
             </figure>
             <div class="card-body">
               <h2 class="card-title">${meal.strMeal}</h2>
-              <p>${meal.strInstructions.slice(0, 200)}</p>
+               <p>${meal.strInstructions.length > 200 ? meal.strInstructions.slice(0, 200) + "..." : meal.strInstructions + " " + "Food is an essential part of human life, providing nourishment, energy, and the vital nutrients needed for growth and survival. It brings people together, offering a "}</p>
               <div class="card-actions justify-end">
                 <a onclick="openModal('${meal.strMeal.replace(/'/g, "\\'")}', '${meal.strMealThumb}', '${meal.strCategory}', '${meal.strArea}', \`${meal.strInstructions}\`, '${meal.strYoutube}')" class="border-b-2 cursor-pointer border-[#FFC107]">View Details</a>
 
